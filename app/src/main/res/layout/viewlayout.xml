@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
-
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/res_view_name"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp"
+        android:paddingLeft="8dp"
+        android:textSize="15dp"
+        android:hint="PAKISTSN ZINDABAD"
+        />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:id="@+id/res_view_age"/>
+        android:paddingLeft="8dp"
+        android:textSize="15dp"
+        android:hint="PAKISTSN ZINDABAD"
+        android:id="@+id/res_view_age"
+        />
 
 </LinearLayout>

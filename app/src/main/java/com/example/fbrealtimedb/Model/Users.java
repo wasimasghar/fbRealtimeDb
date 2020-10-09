@@ -1,6 +1,7 @@
 package com.example.fbrealtimedb.Model;
 
 public class Users {
+    private String uid;
     private String Name;
     private int Age;
 
@@ -10,6 +11,14 @@ public class Users {
     }
 
     public Users() {
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getName() {
@@ -26,5 +35,15 @@ public class Users {
 
     public void setAge(int age) {
         this.Age = age;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+       if (obj instanceof Users){
+           Users users= (Users) obj;
+           return this.getUid().equals(users.uid);
+       }
+       else
+           return false;
     }
 }

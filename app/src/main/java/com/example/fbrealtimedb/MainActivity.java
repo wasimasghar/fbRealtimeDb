@@ -57,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
                 Users users=dataSnapshot.getValue(Users.class);
+
+                users.setUid(dataSnapshot.getKey());
+
                 Log.d(TAG, "onChildAdded: Name "+users.getName());
                 Log.d(TAG, "onChildAdded: Age "+users.getAge());
                 usersList.add(users);
@@ -67,12 +70,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                Users users=dataSnapshot.getValue(Users.class);
+                users.setUid(dataSnapshot.getKey());
 
+                usersList.remove(users);
+                userAdapter.notifyDataSetChanged();
             }
 
             @Override
